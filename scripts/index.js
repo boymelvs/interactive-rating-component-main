@@ -34,7 +34,7 @@ const clickListen = (action, elems, optional) => {
       action.addEventListener("click", (e) => {
          if (action.classList.contains("close")) {
             addRemoveClasses(elems);
-         } else if (getSelectedRate(elems) > 0) {
+         } else if (getSelectedRate(elems)) {
             addRemoveClasses(optional);
          }
       });
@@ -54,16 +54,16 @@ const rateLoop = (els, elemKey) => {
 
 /* select which rate is active */
 const getSelectedRate = (elems) => {
-   let getRate;
+   let isActive;
    const selectedRate = document.querySelector(".selected_rate");
    elems.forEach((el, elKey) => {
       if (el.classList.contains("active")) {
          selectedRate.innerText = el.innerText;
-         getRate = el.innerText;
+         isActive = true;
       }
    });
 
-   return getRate;
+   return isActive;
 };
 
 const rates = document.querySelectorAll(".rate");
