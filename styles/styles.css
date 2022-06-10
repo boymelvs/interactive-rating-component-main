@@ -203,7 +203,7 @@ footer a {
    justify-content: center;
    gap: 3rem;
    max-width: 38rem;
-   background: linear-gradient(45deg, hsl(216, 19%, 25%), hsl(213, 19%, 25%));
+   background: linear-gradient(45deg, var(--very-dark-blue), var(--dark-blue));
    padding: 2rem;
    border-radius: 2rem;
 }
