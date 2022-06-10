@@ -1,14 +1,9 @@
 "use strict";
 
-/* add/remove active classes for css */
-const toggle = (elem) => {
-   elem.classList.contains("active") ? elem.classList.remove("active") : elem.classList.add("active");
-};
-
-/* add/remove show classes to make element vissible */
+/* add/remove classes to make element vissible */
 const addRemoveClasses = (elem) => {
    if (elem.classList.contains("show")) {
-      toggle(elem);
+      elem.classList.remove("active");
 
       setTimeout(() => {
          elem.classList.remove("show");
@@ -17,7 +12,7 @@ const addRemoveClasses = (elem) => {
       elem.classList.add("show");
 
       setTimeout(() => {
-         toggle(elem);
+         elem.classList.add("active");
       }, 0.1);
    }
 };
@@ -45,7 +40,7 @@ const clickListen = (action, elems, optional) => {
 const rateLoop = (els, elemKey) => {
    els.forEach((el, elKey) => {
       if (elKey == elemKey) {
-         toggle(el);
+         addRemoveClasses(el);
       } else {
          el.classList.remove("active");
       }
