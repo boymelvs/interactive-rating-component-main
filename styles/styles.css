@@ -65,7 +65,7 @@ footer a {
 }
 
 .main_content {
-   background: linear-gradient(45deg, hsl(216, 19%, 25%), hsl(213, 19%, 25%));
+   background: linear-gradient(45deg, var(--very-dark-blue), var(--dark-blue));
    max-width: 38rem;
    border-radius: 2rem;
    width: 100%;
