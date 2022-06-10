@@ -55,6 +55,7 @@ const rateLoop = (els, elemKey) => {
 /* select which rate is active */
 const getSelectedRate = (elems) => {
    let isActive;
+
    const selectedRate = document.querySelector(".selected_rate");
    elems.forEach((el, elKey) => {
       if (el.classList.contains("active")) {
