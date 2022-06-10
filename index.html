@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content="this is the solution from frontend mentor challenge, to create interactive rating component" />
+      <meta name="keyword" content="html, css, flexbox, javascript" />
+      <meta name="author" content="melvin" />
+
+      <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+      <link rel="stylesheet" href="./styles/styles.css" />
+
+      <title>Frontend Mentor | Interactive rating component</title>
+   </head>
+   <body>
+      <div class="container">
+         <main class="main_content">
+            <div class="card">
+               <a href="#">
+                  <img src="./images/icon-star.svg" alt="star" class="star_icon" />
+               </a>
+
+               <div class="title_description_container">
+                  <div class="title">How did we do?</div>
+                  <p class="description">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+               </div>
+
+               <div class="submitBtn_rates_container">
+                  <div class="rates">
+                     <div class="rate one">1</div>
+                     <div class="rate two">2</div>
+                     <div class="rate three">3</div>
+                     <div class="rate four">4</div>
+                     <div class="rate five">5</div>
+                  </div>
+
+                  <button type="submit" class="submit_btn">Submit</button>
+               </div>
+            </div>
+
+            <!-- all thank you modal -->
+            <div class="thanks_modal_container">
+               <div class="close">X</div>
+               <div class="thanks_modal">
+                  <div class="thanks_icon_container">
+                     <img src="./images/illustration-thank-you.svg" alt="thank you" class="thanks_icon" />
+
+                     <div class="selected_rate_message">You selected <span class="selected_rate">5</span> out of 5</div>
+                  </div>
+
+                  <div class="thanks_message_container">
+                     <h1 class="thank_you">Thank you!</h1>
+                     <p class="thanks_message">We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!</p>
+                  </div>
+               </div>
+            </div>
+         </main>
+
+         <footer class="attribution">
+            Challenge by <a href="" target="_blank" rel="noreferrer noopener">Frontend Mentor</a>. Coded by <a href="" target="_blank" rel="noreferrer noopener">boymelvs</a>
+         </footer>
+      </div>
+
+      <script src="./scripts/index.js"></script>
+   </body>
+</html>
