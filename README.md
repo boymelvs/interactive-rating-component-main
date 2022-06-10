@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Interactive rating component solution](./design/desktop-preview.jpg)
+![Interactive rating component solution](./design/desktop-design.jpg)
 
 ### Links
 

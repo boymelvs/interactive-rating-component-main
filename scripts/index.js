@@ -1,9 +1,11 @@
 "use strict";
 
+/* add/remove active classes for css */
 const toggle = (elem) => {
    elem.classList.contains("active") ? elem.classList.remove("active") : elem.classList.add("active");
 };
 
+/* add/remove show classes to make element vissible */
 const addRemoveClasses = (elem) => {
    if (elem.classList.contains("show")) {
       toggle(elem);
@@ -20,43 +22,55 @@ const addRemoveClasses = (elem) => {
    }
 };
 
-const clickListen = (action, elems) => {
+/* provide listening for click */
+const clickListen = (action, elems, optional) => {
    if (action.length > 1) {
       elems.forEach((elem, elemKey) => {
          elem.addEventListener("click", (e) => {
-            provideLoop(elems, elemKey);
+            rateLoop(elems, elemKey);
          });
       });
    } else {
       action.addEventListener("click", (e) => {
-         console.log("getrate", provideLoop(action, elems));
-      });
-   }
-};
-
-const provideLoop = (els, elemKey) => {
-   if (els.length > 1) {
-      els.forEach((el, elKey) => {
-         if (elKey == elemKey) {
-            let getRate = el.innerText;
-
-            toggle(el);
-            getSelectedRate(getRate);
-         } else {
-            el.classList.remove("active");
+         if (action.classList.contains("close")) {
+            addRemoveClasses(elems);
+         } else if (getSelectedRate(elems) > 0) {
+            addRemoveClasses(optional);
          }
       });
    }
 };
 
-const getSelectedRate = (rate) => {
+/* looping in the rates */
+const rateLoop = (els, elemKey) => {
+   els.forEach((el, elKey) => {
+      if (elKey == elemKey) {
+         toggle(el);
+      } else {
+         el.classList.remove("active");
+      }
+   });
+};
+
+/* select which rate is active */
+const getSelectedRate = (elems) => {
+   let getRate;
    const selectedRate = document.querySelector(".selected_rate");
-   selectedRate.innerText = rate;
+   elems.forEach((el, elKey) => {
+      if (el.classList.contains("active")) {
+         selectedRate.innerText = el.innerText;
+         getRate = el.innerText;
+      }
+   });
+
+   return getRate;
 };
 
 const rates = document.querySelectorAll(".rate");
 const submitBtn = document.querySelector(".submit_btn");
 const thanksModal = document.querySelector(".thanks_modal_container");
+const closeThanksModal = document.querySelector(".close");
+
 clickListen(rates, rates);
-clickListen(submitBtn, thanksModal);
-getSelectedRate();
+clickListen(submitBtn, rates, thanksModal);
+clickListen(closeThanksModal, thanksModal);

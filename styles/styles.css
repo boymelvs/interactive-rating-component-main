@@ -189,6 +189,13 @@ footer a {
    animation: fadeIn 300ms ease-in-out;
 }
 
+.close {
+   width: 100%;
+   text-align: right;
+   font-weight: var(--font-weight-700);
+   cursor: pointer;
+}
+
 .thanks_modal {
    display: flex;
    flex-direction: column;
