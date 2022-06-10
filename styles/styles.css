@@ -58,7 +58,7 @@ footer a {
    justify-content: center;
    gap: 2rem; /* between main content and footer */
 
-   padding: 2rem;
+   padding: 1rem;
    min-width: 32rem;
    max-width: 144rem;
    min-height: 100vh;
@@ -168,7 +168,7 @@ footer a {
    flex-direction: column;
    align-items: center;
    justify-content: center;
-   padding: 2rem;
+   padding: 1rem;
 
    min-height: 100vh;
    background: var(--very-dark-blue);
